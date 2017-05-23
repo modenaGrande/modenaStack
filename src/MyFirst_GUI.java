@@ -71,8 +71,8 @@ public class MyFirst_GUI {
         /**
          * Status bar
          */
-
-        // Name
+//prost jotel skazat 4to tak i dumal 4to nado rebase delat' )))))
+       // Name
         
         JLabel label = new JLabel("\u041A\u0438\u0442\u043E\u043A: " + kitok.NAME);
         label.setBounds(0, 0, 441, 25);
