@@ -89,7 +89,7 @@ public class MyFirst_GUI {
         kitok.timer.action.registerCounterUpdatedListener(new CounterUpdatedListener() {
             @Override
             public void onCounterUpdated(int counter) {
-            	if (counter % 4 == 0) {
+            	if (counter % 1800 == 0) {
             		kitok.setSpeed(kitok.getSpeed()-1);
             		LabelSpeed.setText(kitok.getSpeed1());
             	}
@@ -110,7 +110,7 @@ public class MyFirst_GUI {
         kitok.timer.action.registerCounterUpdatedListener(new CounterUpdatedListener() {
             @Override
             public void onCounterUpdated(int counter) {
-            	if (counter % 3 == 0) {
+            	if (counter % 1800 == 0) {
             		kitok.setWeight(kitok.getWeight()-10);
             		LabelWeight.setText(kitok.getWeight1());
             	}
@@ -131,7 +131,7 @@ public class MyFirst_GUI {
         kitok.timer.action.registerCounterUpdatedListener(new CounterUpdatedListener() {
             @Override
             public void onCounterUpdated(int counter) {
-            	if (counter % 3 == 0) {
+            	if (counter % 1800 == 0) {
             		kitok.setCondition(kitok.getCondition()-1);
             		LabelCondition.setText(kitok.getCondition1());
             	}
@@ -152,7 +152,7 @@ public class MyFirst_GUI {
         kitok.timer.action.registerCounterUpdatedListener(new CounterUpdatedListener() {
             @Override
             public void onCounterUpdated(int counter) {
-            	if (counter % 3 == 0) {
+            	if (counter % 1800 == 0) {
             		kitok.setHealth(kitok.getHealth()-1);
             		LabelHealth.setText(kitok.getHealth1());
             	}
@@ -198,8 +198,8 @@ public class MyFirst_GUI {
             @Override
             public void onCounterUpdated(int counter) {
             	if (counter % 5 == 0) {
-            		double avgSpeed = kitok.getDestination()/counter;
-            		lblNewLabel_2.setText(String.valueOf(avgSpeed));
+            		double avgSpeed = kitok.getDestination()*1000/counter;
+            		lblNewLabel_2.setText(String.format("%.3f",avgSpeed));
             		System.out.printf("avgSpeed: + %.3f%n ", avgSpeed );
             		System.out.println("Counter: " + counter);
             	}
@@ -219,13 +219,13 @@ public class MyFirst_GUI {
         
         kitok.timer.action.registerCounterUpdatedListener(new CounterUpdatedListener() {
             @Override
-            public void onCounterUpdated(int counter) {
-            	//counter.System.out.printf("Destination: + %.3f%n ", kitok.getDestination());
-            	//System.out.println("Counter: " + counter);
+            public void onCounterUpdated(int counter) {           	
             	if (counter % 5 == 0) {
             		double dest = kitok.getDestination() + (kitok.getSpeed()/3600d)*(kitok.getCondition()/10d);
             		kitok.setDestination(dest);
             		lblNewLabel_3.setText(String.format("%.3f", kitok.getDestination()));
+            		System.out.printf("Destination: + %.3f%n ", kitok.getDestination());
+                	System.out.println("Counter: " + counter);
             	}
             }
         });
