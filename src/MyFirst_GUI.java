@@ -23,8 +23,7 @@ public class MyFirst_GUI {
 
     private JFrame frame;
     public JLabel label_1;
-    private JTextArea textArea = new JTextArea();
-    JScrollPane scrollBar = new JScrollPane(textArea);
+    JTextArea textArea = new JTextArea();
     
 
     /**
@@ -66,7 +65,6 @@ public class MyFirst_GUI {
         frame.setBounds(100, 100, 450, 371);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
-        frame.getContentPane().add(scrollBar, BorderLayout.CENTER);
 
         /**
          * Status bar
@@ -350,15 +348,19 @@ public class MyFirst_GUI {
             	}
             }
         });
-        textArea.setEditable(false);
         
-        // TextArea
         
-        //JTextArea textArea = new JTextArea();
         textArea.setRows(4);
-        textArea.setBounds(0, 251, 444, 93);
+        textArea.setEditable(false);
+        textArea.setBounds(0, 251, 444, 109);
         frame.getContentPane().add(textArea);
-        // test
+        textArea.setWrapStyleWord(true);
+        textArea.setLineWrap(true);
+        
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane.setBounds(0, 251, 444, 92);
+        frame.getContentPane().add(scrollPane);
+        
+        
     }
 }
-
