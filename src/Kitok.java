@@ -153,9 +153,9 @@ public class Kitok {
 
     Kitok(String color, MyFirst_GUI myGui) {
         this.color = color;
-        setSpeed(5);
+        setSpeed(10);
         setWeight(2000);
-        setCondition(5);
+        setCondition(10);
         setHealth(100);
         startTimer();
     }

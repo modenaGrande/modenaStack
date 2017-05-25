@@ -29,7 +29,7 @@ public class MyFirst_GUI {
     /**
      * Launch the application.
      */
-    public static void main(String[] args) {
+    public static void start() {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -200,8 +200,8 @@ public class MyFirst_GUI {
             	if (counter % 5 == 0) {
             		double avgSpeed = kitok.getDestination()*1000/counter;
             		lblNewLabel_2.setText(String.format("%.3f",avgSpeed));
-            		System.out.printf("avgSpeed: + %.3f%n ", avgSpeed );
-            		System.out.println("Counter: " + counter);
+            		//System.out.printf("avgSpeed: + %.3f%n ", avgSpeed );
+            		//System.out.println("Counter: " + counter);
             	}
             }
         });
@@ -220,12 +220,12 @@ public class MyFirst_GUI {
         kitok.timer.action.registerCounterUpdatedListener(new CounterUpdatedListener() {
             @Override
             public void onCounterUpdated(int counter) {           	
-            	if (counter % 5 == 0) {
-            		double dest = kitok.getDestination() + (kitok.getSpeed()/3600d)*(kitok.getCondition()/10d);
+            		double dest = kitok.getDestination() + (kitok.getSpeed()/3600d)*(kitok.getCondition()/5d);
             		kitok.setDestination(dest);
+            		if (counter % 5 == 0) {
             		lblNewLabel_3.setText(String.format("%.3f", kitok.getDestination()));
-            		System.out.printf("Destination: + %.3f%n ", kitok.getDestination());
-                	System.out.println("Counter: " + counter);
+            		//System.out.printf("Destination: + %.3f%n ", kitok.getDestination());
+                	//System.out.println("Counter: " + counter);
             	}
             }
         });
