@@ -6,6 +6,7 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridBagLayout;
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
@@ -19,6 +20,15 @@ import java.awt.event.ActionEvent;
 public class ColorSelect {
 
 	private JFrame frame3;
+	private String colorSet;
+	
+	public void setColorSet(String colorSet) {
+		this.colorSet = colorSet;
+	}
+	
+	public String getColorSet() {
+		return colorSet;
+	}
 
 	/**
 	 * Launch the application.
@@ -53,6 +63,7 @@ public class ColorSelect {
 		frame3.getContentPane().setLayout(null);
 		
 		JButton btnGreen = new JButton("Green");
+		btnGreen.setForeground(Color.green);
 		btnGreen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame3.setVisible(false);
@@ -61,8 +72,10 @@ public class ColorSelect {
 		});
 		btnGreen.setBounds(0, 0, 434, 65);
 		frame3.getContentPane().add(btnGreen);
+		setColorSet("green");
 		
 		JButton btnNewButton = new JButton("Black");
+		btnNewButton.setForeground(Color.black);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame3.setVisible(false);
@@ -71,8 +84,10 @@ public class ColorSelect {
 		});
 		btnNewButton.setBounds(0, 66, 434, 66);
 		frame3.getContentPane().add(btnNewButton);
+		setColorSet("black");
 		
-		JButton btnYellow = new JButton("Yellow");
+		JButton btnYellow = new JButton("Blue");
+		btnYellow.setForeground(Color.blue);
 		btnYellow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame3.setVisible(false);
@@ -81,8 +96,10 @@ public class ColorSelect {
 		});
 		btnYellow.setBounds(0, 132, 434, 66);
 		frame3.getContentPane().add(btnYellow);
+		setColorSet("blue");
 		
 		JButton btnNewButton_1 = new JButton("Red");
+		btnNewButton_1.setForeground(Color.red);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame3.setVisible(false);
@@ -91,6 +108,7 @@ public class ColorSelect {
 		});
 		btnNewButton_1.setBounds(0, 197, 434, 65);
 		frame3.getContentPane().add(btnNewButton_1);
+		setColorSet("red");
 	}
 
 }

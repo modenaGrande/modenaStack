@@ -50,7 +50,7 @@ public class MyFirst_GUI {
      * Create the application.
      */
     public MyFirst_GUI() {
-        kitok = new Kitok("Yellow", this);
+        kitok = new Kitok();
         meal = new Meal();
         initialize();
     }

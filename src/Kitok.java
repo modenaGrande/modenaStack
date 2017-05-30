@@ -1,6 +1,6 @@
 public class Kitok {
 
-    public static final String NAME = "KitOk";
+    public static String NAME = "KitOk";
     private static final String DEFAULT_COLOR = "White";
     private int speed;
     private int weight;
@@ -108,10 +108,11 @@ public class Kitok {
     /**
      * 
      * @param color
+     * @return 
      */
 
-    public void setColor(String color) {
-        this.color = color;
+    public String setColor(String colorSet) { 
+    		return String.format("<html><font color='%s'>this.NAME</font></html>", colorSet); 
     }
 
     public String getColor() {
@@ -151,17 +152,19 @@ public class Kitok {
      * Constructors
      */
 
-    Kitok(String color, MyFirst_GUI myGui) {
+    /*Kitok(String color, MyFirst_GUI myGui) {
         this.color = color;
         setSpeed(10);
         setWeight(2000);
         setCondition(10);
         setHealth(100);
         startTimer();
-    }
+    }*/
 
-    Kitok(MyFirst_GUI myGui) {
-        this.color = DEFAULT_COLOR;
+    ColorSelect colorSelect = new ColorSelect();
+    
+    Kitok() {
+        setColor(colorSelect.getColorSet());
         setSpeed(5);
         setWeight(2000);
         setCondition(5);
